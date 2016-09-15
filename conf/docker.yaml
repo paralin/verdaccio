@@ -9,13 +9,6 @@
 # path to a directory with all packages
 storage: /verdaccio/storage
 
-auth:
-  htpasswd:
-    file: /verdaccio/config/htpasswd
-    # Maximum amount of users allowed to register, defaults to "+inf".
-    # You can set this to -1 to disable registration.
-    #max_users: 1000
-
 # a list of other known repositories we can talk to
 uplinks:
   npmjs:
@@ -26,6 +19,7 @@ packages:
     # scoped packages
     access: $all
     publish: $all
+    proxy: npmjs
 
   '*':
     # allow all users (including non-authenticated users) to read and
